@@ -7,7 +7,6 @@ namespace CrawlerGeradorDeArquivos
     {
         public Properties process(string[] args)
         {
-            Console.WriteLine("Hello World! xyz");
             Properties properties = new Properties
             {
                 MaxBufferSize = 1,
@@ -40,10 +39,11 @@ namespace CrawlerGeradorDeArquivos
                 }
             }
             
-            Console.WriteLine("Buffer máximo: "+properties.MaxBufferSize);
-            Console.WriteLine("Arquivo máximo: "+properties.MaxFileSize);
-            Console.WriteLine("Caminho do arquivo: "+properties.Path);
+            Console.WriteLine("Buffer máximo: " + properties.MaxBufferSize + "MB");
+            Console.WriteLine("Arquivo máximo: " + properties.MaxFileSize + "MB");
+            Console.WriteLine("Caminho do arquivo: " + properties.Path);
             Console.WriteLine("Nome do arquivo: " + properties.FileName);
+            Console.WriteLine("");
 
             if (properties.Path == null)
             {
