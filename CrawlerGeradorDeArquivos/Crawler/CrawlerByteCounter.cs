@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Linq;
-using OpenQA.Selenium.IE;
-using System.IO;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-
-namespace Crawler
+﻿namespace CrawlerGeradorDeArquivos.Crawler
 {
     class CrawlerByteCounter
     {
-        public int Get(String text)
+        private readonly CrawlerBase crawler;
+        public CrawlerByteCounter(CrawlerBase crawler)
         {
-            using (var crawler = new Crawler())
-            {
-                return crawler.GetByteSize(text);
-            }
+            this.crawler = crawler;
+        }
+        public int Get(string text)
+        {
+            crawler.GoToUrl(@"https://mothereff.in/byte-counter#"+ text);
+            string txtBytes = crawler.getTextFromElementId("bytes");
+            return int.Parse(txtBytes.Replace(" bytes", ""));
         }
     }
 }
