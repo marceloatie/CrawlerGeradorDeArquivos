@@ -38,6 +38,20 @@ namespace Crawler
             return element.Text;
         }
 
+        public int GetByteSize(String text)
+        {
+            Uri webSiteUri = new Uri("https://mothereff.in/byte-counter#", UriKind.Absolute);
+
+            if (webSiteUri == null) throw new ArgumentNullException("webSiteUri");
+            _remoteWebDriver.Navigate().GoToUrl(webSiteUri + text);
+            IWebElement TxtBytes = _remoteWebDriver.FindElement(By.Id("bytes"));
+
+            if (!TxtBytes.Text.EndsWith(" bytes")) {
+                //throw error
+            }
+            return int.Parse(TxtBytes.Text.Replace(" bytes", ""));
+        }
+
         public void Dispose()
         {
             Dispose(true);

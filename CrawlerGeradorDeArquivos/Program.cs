@@ -20,8 +20,12 @@ namespace CrawlerGeradorDeArquivos
             string msg = crawlerLerolero.Get();
             Console.WriteLine("\nLerolero: " + msg + "\n");
             if (msg == null) exit();
-            
+
             //Verificar tamanho em bytes
+            CrawlerByteCounter crawlerByteCounter = new CrawlerByteCounter();
+            int size = crawlerByteCounter.Get(msg);
+            Console.WriteLine("\nBytes: " + size + "\n");
+            
             //Salvar arquivo
             //Exibir relatório
             //Aguardar pelo comando de sair
