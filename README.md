@@ -19,3 +19,7 @@ Exemplo ``--path c:\temp\ --filename teste.txt --filesize 200 --buffersize 1``
 A ordem dos parametros não são consideradas
 
 Se o arquivo já existir, ele será sobrescrito.
+
+# Testes unitários
+
+Os testes unitários estão em um projeto separado (mas dentro da mesma solução), basta executar o "Run Tests" desse projeto de testes
