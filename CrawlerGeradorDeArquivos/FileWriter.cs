@@ -15,7 +15,7 @@ namespace CrawlerGeradorDeArquivos
             _properties = properties;
         }
 
-        public void WriteText(string text, int textSize)
+        public Report WriteText(string text, int textSize)
         {
             int kilobyte = 1024;
             int megabyte = 1024 * kilobyte;
@@ -54,13 +54,14 @@ namespace CrawlerGeradorDeArquivos
                 stopwatch.Stop();
             }
 
-            Console.WriteLine("Nome:" + Path.GetFileName(localFile));
-            Console.WriteLine("Tamanho do arquivo: " + new FileInfo(localFile).Length / megabyte + " MB");
-            Console.WriteLine("Path:" + Path.GetDirectoryName(localFile));
-            Console.WriteLine("Iterações: " + iteractionCount);
-            Console.WriteLine("Tempo total: " + stopwatch.Elapsed);
-            Console.WriteLine("Tempo médio: " + stopwatch.Elapsed / iteractionCount);
-            Console.WriteLine("");
+            Report report = new Report();
+            report.FileName = Path.GetFileName(localFile);
+            report.FileSize = (int)(new FileInfo(localFile).Length / megabyte);
+            report.FilePath = Path.GetDirectoryName(localFile);
+            report.Iteractions = iteractionCount;
+            report.TimeElapsed = stopwatch.Elapsed;
+
+            return report;
         }
     }
 }

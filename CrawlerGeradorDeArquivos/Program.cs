@@ -28,9 +28,11 @@ namespace CrawlerGeradorDeArquivos
 
             //Salvar arquivo
             FileWriter fileWriter = new FileWriter(properties);
-            fileWriter.WriteText(textQuote, textSize);
+            Report report = fileWriter.WriteText(textQuote, textSize);
 
             //Exibir relatório
+            report.Print();
+
             //Aguardar pelo comando de sair
             exit();
         }
