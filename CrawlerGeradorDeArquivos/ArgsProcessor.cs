@@ -3,7 +3,7 @@ using System;
 
 namespace CrawlerGeradorDeArquivos
 {
-    class ArgsProcessor
+    public class ArgsProcessor
     {
         public Properties Process(string[] args)
         {

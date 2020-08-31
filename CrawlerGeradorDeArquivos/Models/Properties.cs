@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CrawlerGeradorDeArquivos.Models
 {
-    class Properties
+    public class Properties
     {
         public int MaxBufferSize { get; set; }
 
