@@ -17,16 +17,19 @@ namespace CrawlerGeradorDeArquivos
             
             //Obter Lerolero
             CrawlerLerolero crawlerLerolero = new CrawlerLerolero();
-            string msg = crawlerLerolero.Get();
-            Console.WriteLine("\nLerolero: " + msg + "\n");
-            if (msg == null) exit();
+            string textQuote = crawlerLerolero.Get();
+            Console.WriteLine("\nLerolero: " + textQuote + "\n");
+            if (textQuote == null) exit();
 
             //Verificar tamanho em bytes
             CrawlerByteCounter crawlerByteCounter = new CrawlerByteCounter();
-            int size = crawlerByteCounter.Get(msg);
-            Console.WriteLine("\nBytes: " + size + "\n");
-            
+            int textSize = crawlerByteCounter.Get(textQuote);
+            Console.WriteLine("\nBytes: " + textSize + "\n");
+
             //Salvar arquivo
+            FileWriter fileWriter = new FileWriter(properties);
+            fileWriter.WriteText(textQuote, textSize);
+
             //Exibir relatório
             //Aguardar pelo comando de sair
             exit();
