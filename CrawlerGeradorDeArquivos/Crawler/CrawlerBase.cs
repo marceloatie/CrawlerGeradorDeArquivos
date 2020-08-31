@@ -5,7 +5,7 @@ using System;
 
 namespace CrawlerGeradorDeArquivos.Crawler
 {
-    class CrawlerBase : IDisposable
+    public class CrawlerBase : IDisposable
     {
         private readonly RemoteWebDriver _remoteWebDriver;
 

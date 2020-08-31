@@ -4,7 +4,7 @@ using System;
 
 namespace CrawlerGeradorDeArquivos
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -71,7 +71,7 @@ namespace CrawlerGeradorDeArquivos
             Environment.Exit(0);
         }
 
-        private static int ByteSizeOfString(string txt)
+        public static int ByteSizeOfString(string txt)
         {
             /*Console.WriteLine("UNICODE ->" + System.Text.ASCIIEncoding.Unicode.GetByteCount(txt));
             Console.WriteLine("ASCII ->" + System.Text.ASCIIEncoding.ASCII.GetByteCount(txt));

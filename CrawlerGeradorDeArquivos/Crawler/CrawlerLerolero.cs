@@ -2,7 +2,7 @@
 
 namespace CrawlerGeradorDeArquivos.Crawler
 {
-    class CrawlerLerolero
+    public class CrawlerLerolero
     {
         private readonly CrawlerBase crawler;
         public CrawlerLerolero(CrawlerBase crawler)

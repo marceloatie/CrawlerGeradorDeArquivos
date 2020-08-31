@@ -2,7 +2,7 @@
 
 namespace CrawlerGeradorDeArquivos.Crawler
 {
-    class CrawlerByteCounter
+    public class CrawlerByteCounter
     {
         private readonly CrawlerBase crawler;
         public CrawlerByteCounter(CrawlerBase crawler)
