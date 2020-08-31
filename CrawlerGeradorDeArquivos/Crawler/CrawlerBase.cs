@@ -20,16 +20,17 @@ namespace CrawlerGeradorDeArquivos.Crawler
             _remoteWebDriver = remoteWebDriver;
         }
 
-        /*public Crawler(RemoteWebDriver remoteWebDriver)
-        {
-            if (remoteWebDriver == null) throw new ArgumentNullException("remoteWebDriver");
-            _remoteWebDriver = remoteWebDriver;
-        }*/
-
         public void GoToUrl(string url)
         {
-            Uri webSiteUri = new Uri(url, UriKind.Absolute);
-            _remoteWebDriver.Navigate().GoToUrl(webSiteUri);
+            try
+            {
+                Uri webSiteUri = new Uri(url, UriKind.Absolute);
+                _remoteWebDriver.Navigate().GoToUrl(webSiteUri);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 

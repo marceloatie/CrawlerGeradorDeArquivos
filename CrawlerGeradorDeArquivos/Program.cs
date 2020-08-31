@@ -26,8 +26,17 @@ namespace CrawlerGeradorDeArquivos
                 if (textQuote == null) Exit();
 
                 //Verificar tamanho em bytes
-                CrawlerByteCounter crawlerByteCounter = new CrawlerByteCounter(crawler);
-                textSize = crawlerByteCounter.Get(textQuote);
+                try
+                {
+                    CrawlerByteCounter crawlerByteCounter = new CrawlerByteCounter(crawler);
+                    textSize = crawlerByteCounter.Get(textQuote);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + "\n");
+                    Console.WriteLine("Rapaz, deu ruim no crawler! vou usar a estratégia de fallback");
+                    textSize = ByteSizeOfString(textQuote);
+                }
                 Console.WriteLine("\nBytes: " + textSize + "\n");
             }
 
@@ -47,6 +56,15 @@ namespace CrawlerGeradorDeArquivos
             Console.WriteLine("Aperte uma tecla para encerrar");
             Console.ReadKey();
             Environment.Exit(0);
+        }
+
+        private static int ByteSizeOfString(string txt)
+        {
+            /*Console.WriteLine("UNICODE ->" + System.Text.ASCIIEncoding.Unicode.GetByteCount(txt));
+            Console.WriteLine("ASCII ->" + System.Text.ASCIIEncoding.ASCII.GetByteCount(txt));
+            Console.WriteLine("UTF8 ->" + System.Text.ASCIIEncoding.UTF8.GetByteCount(txt));*/
+
+            return System.Text.ASCIIEncoding.UTF8.GetByteCount(txt);
         }
     }
 }

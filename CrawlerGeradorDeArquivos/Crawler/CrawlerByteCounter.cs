@@ -1,4 +1,6 @@
-﻿namespace CrawlerGeradorDeArquivos.Crawler
+﻿using System;
+
+namespace CrawlerGeradorDeArquivos.Crawler
 {
     class CrawlerByteCounter
     {
@@ -9,9 +11,18 @@
         }
         public int Get(string text)
         {
-            crawler.GoToUrl(@"https://mothereff.in/byte-counter#"+ text);
-            string txtBytes = crawler.getTextFromElementId("bytes");
-            return int.Parse(txtBytes.Replace(" bytes", ""));
+            int size;
+            try
+            {
+                crawler.GoToUrl(@"https://mothereff.in/byte-counter#" + text);
+                string txtBytes = crawler.getTextFromElementId("bytes");
+                size = int.Parse(txtBytes.Replace(" bytes", ""));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return size;
         }
     }
 }
