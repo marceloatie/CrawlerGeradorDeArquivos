@@ -47,8 +47,15 @@ namespace CrawlerGeradorDeArquivos
 
             if (properties.Path == null)
             {
-                Console.WriteLine("Parametro --path não foi informado");
-                return null;
+                throw new Exception("Parametro --path não foi informado");
+            }
+            else if (properties.MaxFileSize <= 0)
+            {
+                throw new Exception("Parametro --filesize não permitido");
+            }
+            else if (properties.MaxBufferSize <= 0)
+            {
+                throw new Exception("Parametro --buffersize não permitido");
             }
 
             return properties;

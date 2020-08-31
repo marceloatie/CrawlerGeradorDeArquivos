@@ -1,4 +1,6 @@
-﻿namespace CrawlerGeradorDeArquivos.Crawler
+﻿using System;
+
+namespace CrawlerGeradorDeArquivos.Crawler
 {
     class CrawlerLerolero
     {
@@ -9,8 +11,15 @@
         }
         public string Get()
         {
-            crawler.GoToUrl(@"https://lerolero.com");
-            return crawler.getTextFromElementClassName("sentence-exited");
+            try
+            {
+                crawler.GoToUrl(@"https://lerolero.com");
+                return crawler.getTextFromElementClassName("sentence-exited");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

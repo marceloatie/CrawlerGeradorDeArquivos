@@ -17,6 +17,11 @@ namespace CrawlerGeradorDeArquivos
 
         public Report WriteText(string text, int textSize)
         {
+            if (textSize <= 0)
+            {
+                throw new Exception("O tamanho do texto informado é zero");
+            }
+
             int kilobyte = 1024;
             int megabyte = 1024 * kilobyte;
             long maxFileSize = _properties.MaxFileSize * megabyte;
