@@ -5,7 +5,7 @@ namespace CrawlerGeradorDeArquivos
 {
     class ArgsProcessor
     {
-        public Properties process(string[] args)
+        public Properties Process(string[] args)
         {
             Properties properties = new Properties
             {

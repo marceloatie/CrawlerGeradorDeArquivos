@@ -12,8 +12,8 @@ namespace CrawlerGeradorDeArquivos
 
             //Processar args
             ArgsProcessor argsProcessor = new ArgsProcessor();
-            Properties properties = argsProcessor.process(args);
-            if (properties == null) exit();
+            Properties properties = argsProcessor.Process(args);
+            if (properties == null) Exit();
 
             string textQuote = null;
             int textSize = 0;
@@ -23,7 +23,7 @@ namespace CrawlerGeradorDeArquivos
                 CrawlerLerolero crawlerLerolero = new CrawlerLerolero(crawler);
                 textQuote = crawlerLerolero.Get();
                 Console.WriteLine("\nLerolero: " + textQuote + "\n");
-                if (textQuote == null) exit();
+                if (textQuote == null) Exit();
 
                 //Verificar tamanho em bytes
                 CrawlerByteCounter crawlerByteCounter = new CrawlerByteCounter(crawler);
@@ -39,10 +39,10 @@ namespace CrawlerGeradorDeArquivos
             report.Print();
 
             //Aguardar pelo comando de sair
-            exit();
+            Exit();
         }
 
-        private static void exit()
+        private static void Exit()
         {
             Console.WriteLine("Aperte uma tecla para encerrar");
             Console.ReadKey();

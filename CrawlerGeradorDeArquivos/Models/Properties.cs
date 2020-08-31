@@ -6,32 +6,12 @@ namespace CrawlerGeradorDeArquivos.Models
 {
     class Properties
     {
-        private int maxBufferSize;
-        public int MaxBufferSize
-        {
-            get { return maxBufferSize; }
-            set { maxBufferSize = value; }
-        }
+        public int MaxBufferSize { get; set; }
 
-        private long maxFileSize;
-        public long MaxFileSize
-        {
-            get { return maxFileSize; }
-            set { maxFileSize = value; }
-        }
+        public long MaxFileSize { get; set; }
 
-        private string path;
-        public string Path
-        {
-            get { return path; }
-            set { path = value; }
-        }
+        public string Path { get; set; }
 
-        private string fileName;
-        public string FileName
-        {
-            get { return fileName; }
-            set { fileName = value; }
-        }
+        public string FileName { get; set; }
     }
 }
