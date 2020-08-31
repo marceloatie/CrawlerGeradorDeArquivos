@@ -1,6 +1,6 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CrawlerGeradorDeArquivos;
 using CrawlerGeradorDeArquivos.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace TestsCrawlerGeradorDeArquivos

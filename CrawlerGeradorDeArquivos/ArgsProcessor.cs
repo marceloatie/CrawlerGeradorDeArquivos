@@ -15,7 +15,7 @@ namespace CrawlerGeradorDeArquivos
             };
 
 
-            for (int i =0; i < args.Length -1; i++)
+            for (int i = 0; i < args.Length - 1; i++)
             {
                 //Console.WriteLine(i + " -> " + args[i]);
                 switch (args[i])
@@ -38,7 +38,7 @@ namespace CrawlerGeradorDeArquivos
                         break;
                 }
             }
-            
+
             Console.WriteLine("Buffer máximo: " + properties.MaxBufferSize + "MB");
             Console.WriteLine("Arquivo máximo: " + properties.MaxFileSize + "MB");
             Console.WriteLine("Caminho do arquivo: " + properties.Path);

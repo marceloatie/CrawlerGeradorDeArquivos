@@ -32,10 +32,10 @@ namespace CrawlerGeradorDeArquivos
                 localFile += @"\";
             }
             localFile += _properties.FileName;
-            
+
             long actualFileSize = 0;
             int iteractionCount = 0;
-            
+
             Stopwatch stopwatch = new Stopwatch();
 
             using (StreamWriter writer = File.CreateText(localFile))
@@ -54,7 +54,7 @@ namespace CrawlerGeradorDeArquivos
                     writer.Write(sb);
                     writer.Flush();
                     sb.Clear();
-                    iteractionCount++;    
+                    iteractionCount++;
                 }
                 stopwatch.Stop();
             }

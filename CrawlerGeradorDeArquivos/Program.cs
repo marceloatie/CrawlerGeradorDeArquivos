@@ -1,5 +1,5 @@
-﻿using CrawlerGeradorDeArquivos.Models;
-using CrawlerGeradorDeArquivos.Crawler;
+﻿using CrawlerGeradorDeArquivos.Crawler;
+using CrawlerGeradorDeArquivos.Models;
 using System;
 
 namespace CrawlerGeradorDeArquivos
@@ -53,7 +53,8 @@ namespace CrawlerGeradorDeArquivos
 
                 //Exibir relatório
                 report.Print();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("----------------");
                 Console.WriteLine("ERRO: " + ex.Message);

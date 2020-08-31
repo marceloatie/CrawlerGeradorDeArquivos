@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CrawlerGeradorDeArquivos.Models
+﻿namespace CrawlerGeradorDeArquivos.Models
 {
     public class Properties
     {
